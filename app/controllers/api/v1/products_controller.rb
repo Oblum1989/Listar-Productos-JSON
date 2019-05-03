@@ -1,7 +1,7 @@
 class Api::V1::ProductsController < ApplicationController
   def index
     @products = Product.all
-    render json: @products
+    format.json {render json: @products}
   end
 
   def new
