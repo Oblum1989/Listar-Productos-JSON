@@ -13,9 +13,9 @@ class Api::V1::ProductsController < ApplicationController
   def create
     @product = Product.create(product_params)
     if @product.save
-      render json: @product, status: :created
+      render json: @product, status: 201
     else
-      render json: {errors: @product.errors}, status: :unprocessable_entity
+      render json: {errors: @product.errors}, status: 422
     end
   end
 
